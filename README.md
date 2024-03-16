@@ -19,7 +19,7 @@ transformer_layer_4.py(直接去掉一层)
 | :----: | :----: | :----: |:----: |:----:|:----:|:----:|:----:|
 | 27.9 | 21.49 | 22.06 |22.43|||||
 
-# 主要修改部分
+# 主要参数配置
 使用的是transformers（big）模型，这里使用的参数配置如下：
 ```
 model_dim: 1024
@@ -27,6 +27,7 @@ ffn_dim: 4096
 head_num: 16
 encoder_layers: 6
 decoder_layers: 6
+droprate=0.3
 ```
 # 主要修改部分
 1.在encoder和decoder中都加了一个svdchange函数，专门做svd分解。
