@@ -15,8 +15,10 @@
 | transformrs | transformrs+ELM | transformrs+ELM<br>(node*1.2) |  transformrs+ELM<br>(node*1.5)|layer_1|layer_2|layer_3|layer_4|
 | :----: | :----: | :----: |:----: |:----:|:----:|:----:|:----:|
 | 27.9 | 21.49 | 22.06 |22.43|||||
-|33.37|  |  |||||
+|33.37|  |  ||||29.04|
 <img width="1109" alt="2fa26787a30cb5d786f555e20a81725" src="https://github.com/kingback156/transformers_elm/assets/146167978/71cc23ef-e494-47e9-9bc9-d4ac96e5b548">
+<img width="1015" alt="d788022af2ceccc1cb2640bb3917538" src="https://github.com/kingback156/transformers_elm/assets/146167978/24bb9692-7b3a-4d58-ad2d-d3192bad3f78">
+
 
 **在/Transformer/modules下面发布主要的结构修改内容:**
 
