@@ -15,10 +15,6 @@
 | transformrs | transformrs<br>ELM(固定) | transformrs+ELM<br>(固定+node*1.2) |  transformrs+ELM<br>(node*1.5)|layer_1|layer_2|layer_3|layer_4|
 | :----: | :----: | :----: |:----: |:----:|:----:|:----:|:----:|
 |33.37|29.25|  |||||29.04|
-<img width="1109" alt="2fa26787a30cb5d786f555e20a81725" src="https://github.com/kingback156/transformers_elm/assets/146167978/71cc23ef-e494-47e9-9bc9-d4ac96e5b548">
-<img width="899" alt="b23a0d9614ced31ef95caa236f088c9" src="https://github.com/kingback156/transformers_elm/assets/146167978/5182aea4-4e8e-4586-9071-e51ea9c80873">
-<img width="1015" alt="d788022af2ceccc1cb2640bb3917538" src="https://github.com/kingback156/transformers_elm/assets/146167978/24bb9692-7b3a-4d58-ad2d-d3192bad3f78">
-
 **在/Transformer/modules下面发布主要的结构修改内容:**
 
 transformer_layer_1.py(随机初始化-->SVD分解-->中间的进行BP更新，左右两边固定)
