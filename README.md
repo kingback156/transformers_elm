@@ -14,7 +14,7 @@
 
 | transformrs | transformrs<br>ELM(fixed) | transformrs+ELM<br>(fixed+node*1.2) |  transformrs+ELM<br>(fixed+node*1.5)|layer_1|layer_2|layer_3|layer_4|
 | :----: | :----: | :----: |:----: |:----:|:----:|:----:|:----:|
-|33.37|29.25|  |||||29.04|
+|33.37|29.25|  |||30.67||29.04|
 
 **在/Transformer/modules下面发布主要的结构修改内容:**
 
