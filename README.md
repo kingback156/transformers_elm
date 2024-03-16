@@ -15,7 +15,7 @@ transformer_layer_4.py(直接去掉一层)
 
 **目前已有的实验效果:** （使用本代码跑出来的transformers的复现内容,BLEU指标数）
 
-| transformrs | transformrs+ELM | transformrs+ELM(node*1.2) |  transformrs+ELM(node*1.5)|
+| transformrs | transformrs+ELM | transformrs+ELM<br>(node*1.2) |  transformrs+ELM<br>(node*1.5)|
 | :----: | :----: | :----: |:----: |
 | 27.9 | 21.49 | 22.06 |22.43|
 
