@@ -20,7 +20,7 @@ class TransformerDecoderLayer(nn.Module):
         self.self_attn = MultiHeadAttention(head_num, model_dim)
         self.en_de_attn = MultiHeadAttention(head_num, model_dim)
 
-        self.fc2 = nn.Linear(ffn_dim, model_dim)
+        self.fc2 = nn.Linear(model_dim, model_dim)
         nn.init.xavier_uniform_(self.fc2.weight)
 
     def forward(self,net_input: torch.Tensor,padding_mask: torch.Tensor,attn_mask: Optional[torch.Tensor] = None,
@@ -71,7 +71,7 @@ class TransformerEncoderLayer(nn.Module):
         self.post_norm = post_norm
         self.self_attn = MultiHeadAttention(head_num, model_dim)
 
-        self.fc2 = nn.Linear(ffn_dim, model_dim)
+        self.fc2 = nn.Linear(model_dim, model_dim)
 
     def forward(self,net_input: torch.Tensor,padding_mask: torch.Tensor,attn_mask: Optional[torch.Tensor] = None,):
 
