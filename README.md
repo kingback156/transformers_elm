@@ -2,9 +2,11 @@
 **目前已有的实验效果:** 
 
 （使用本代码跑出来的transformers的复现内容,BLEU指标数）
+(因为如果设置的全部和transformers的参数配置全部一样，那么将要非常长的时间，在原文中使用base模型单次训练就跑了12小时，使用big模型单次训练便3.5天，复现的时间消耗太大，因此为了尽快的看到所有的复现结果，我调整了参数设置，这样便可以尽快的看到不同的设置所导致的bleu结果趋势)
 
 | transformrs | transformrs+ELM | transformrs+ELM<br>(node*1.2) |  transformrs+ELM<br>(node*1.5)|layer_1|layer_2|layer_3|layer_4|
 | :----: | :----: | :----: |:----: |:----:|:----:|:----:|:----:|
+| 27.9 | 21.49 | 22.06 |22.43||||18.33|
 | 27.9 | 21.49 | 22.06 |22.43||||18.33|
 
 **在/Transformer/modules下面发布主要的结构修改内容:**
@@ -24,14 +26,15 @@ translation(0-4)
 其中translation_0对应的最原始的transformers,其余的标号都各自对应上面的结构更改。
 
 # 主要参数配置
-使用的是transformers（big）模型，这里使用的参数配置如下：
+使用的是transformers（ltl）模型，这里使用的参数配置如下：
 ```
-model_dim: 1024
-ffn_dim: 4096
-head_num: 16
+model_dim: 512
+ffn_dim: 1024
+head_num: 4
 encoder_layers: 6
 decoder_layers: 6
-droprate=0.3
+droprate=0.1
+epoch=10
 ```
 # 主要修改部分
 1.在encoder和decoder中都加了一个svdchange函数，专门做svd分解。
