@@ -20,6 +20,15 @@ transformer_layer_4.py(直接去掉一层)
 | 27.9 | 21.49 | 22.06 |22.43|||||
 
 # 主要修改部分
+使用的是transformers（big）模型，这里使用的参数配置如下：
+'''
+model_dim: 1024
+ffn_dim: 4096
+head_num: 16
+encoder_layers: 6
+decoder_layers: 6
+'''
+# 主要修改部分
 1.在encoder和decoder中都加了一个svdchange函数，专门做svd分解。
 
 2.在这个里面的其他部分都是常规操作，主要是做的self.diag_param = nn.Parameter(torch.diag(S))，分解出来的对角矩阵提取他的对角，这样确保不是更改整个矩阵，而是更改这个向量
