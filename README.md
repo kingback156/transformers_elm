@@ -35,6 +35,9 @@ droprate=0.3
 2.在这个里面的其他部分都是常规操作，主要是做的self.diag_param = nn.Parameter(torch.diag(S))，分解出来的对角矩阵提取他的对角，这样确保不是更改整个矩阵，而是更改这个向量
 
 3.在这个forward部分，把E通过对角的引入重建出来
-![image](https://github.com/kingback156/transformers_elm/assets/146167978/74eead85-f32a-44a1-8ac0-80bf33332032)
-
+```
+E = torch.zeros(self.U.size(0), self.V.size(1), device=net_input.device)
+min_dim = min(E.size(0), E.size(1))
+E[torch.arange(min_dim), torch.arange(min_dim)] = self.diag_param
+```
 4.其他的都没有太大的变化
