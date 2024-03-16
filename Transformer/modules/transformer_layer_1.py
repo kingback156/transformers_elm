@@ -12,7 +12,7 @@ class TransformerDecoderLayer(nn.Module):
         self.register_buffer('U', U)  # fixed
 
         # self.E = nn.Parameter(torch.diag(E)) update this, but dimension error, so I do like down:
-        self.diag_param = nn.Parameter(torch.diag(S))  # 仅对角线元素为可训练参数
+        self.diag_param = nn.Parameter(S)  # 浠呭瑙掔嚎鍏冪礌涓哄彲璁粌鍙傛暟
         
         self.register_buffer('V', V.t()) # fixed 
 
@@ -68,8 +68,8 @@ class TransformerDecoderLayer(nn.Module):
         min_dim = min(E.size(0), E.size(1))
         E[torch.arange(min_dim), torch.arange(min_dim)] = self.diag_param
 
-        weight = torch.mm(torch.mm(self.U, self.E), self.V) # Only this has been modified
-        x = F.linear(net_input, weight) # Only this has been modified
+        weight = torch.mm(torch.mm(self.U, E), self.V) # Only this has been modified
+        x = F.linear(net_input, weight.t()) # Only this has been modified
         x = F.relu(x) 
         x = self.fc2(x) 
         x = self.drop_out3(x) 
@@ -86,7 +86,7 @@ class TransformerEncoderLayer(nn.Module):
         U, S, V = torch.svd(temp_weight, some=False) # decompose
         self.register_buffer('U', U) # fixed
 
-        self.diag_param = nn.Parameter(torch.diag(S))# as shown above
+        self.diag_param = nn.Parameter(S)# as shown above
 
         self.register_buffer('V', V.t()) # fixed
 
@@ -124,7 +124,7 @@ class TransformerEncoderLayer(nn.Module):
         E[torch.arange(min_dim), torch.arange(min_dim)] = self.diag_param
 
         weight = torch.mm(torch.mm(self.U, E), self.V) # Only this has been modified
-        x = F.linear(x, weight, None) # Only this has been modified
+        x = F.linear(x, weight.t(), None) # Only this has been modified
         x = F.relu(x)
         x = self.fc2(x)
         x = self.drop_out(x)
