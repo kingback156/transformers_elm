@@ -1,5 +1,3 @@
-# 训练过程可视化：
-
 # repo结果汇报
 **目前已有的实验效果:** 
 
@@ -26,6 +24,8 @@ transformer_layer_4.py(直接去掉一层)
 translation(0-4)
 
 其中translation_0对应的最原始的transformers,其余的标号都各自对应上面的结构更改。
+
+# 训练过程可视化：
 
 # 主要参数配置
 使用的是transformers（ltl）模型，这里使用的参数配置如下：
