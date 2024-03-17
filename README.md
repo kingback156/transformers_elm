@@ -1,7 +1,7 @@
 # 训练过程可视化：
 <div style="display:inline-block">
-  <img width="1044" alt="Snipaste_2024-03-17_15-46-47" src="https://github.com/kingback156/transformers_elm/assets/146167978/9f80aa5a-6250-4898-8b95-b7f25fc1987a">
-  <img width="1057" alt="Snipaste_2024-03-17_15-47-37" src="https://github.com/kingback156/transformers_elm/assets/146167978/79569935-3069-4c62-ade3-c67d4a7be19b">
+  <img width="1044" alt="Snipaste_2024-03-17_15-46-47" src="https://github.com/kingback156/transformers_elm/assets/146167978/9f80aa5a-6250-4898-8b95-b7f25fc1987a" width="100">
+  <img width="1057" alt="Snipaste_2024-03-17_15-47-37" src="https://github.com/kingback156/transformers_elm/assets/146167978/79569935-3069-4c62-ade3-c67d4a7be19b" width="100">
 </div>
 
 # repo结果汇报
