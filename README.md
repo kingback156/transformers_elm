@@ -1,3 +1,9 @@
+# 训练过程可视化：
+<div style="display:inline-block">
+  <img width="1044" alt="Snipaste_2024-03-17_15-46-47" src="https://github.com/kingback156/transformers_elm/assets/146167978/9f80aa5a-6250-4898-8b95-b7f25fc1987a">
+  <img width="1057" alt="Snipaste_2024-03-17_15-47-37" src="https://github.com/kingback156/transformers_elm/assets/146167978/79569935-3069-4c62-ade3-c67d4a7be19b">
+</div>
+
 # repo结果汇报
 **目前已有的实验效果:** 
 
@@ -24,8 +30,6 @@ transformer_layer_4.py(直接去掉一层)
 translation(0-4)
 
 其中translation_0对应的最原始的transformers,其余的标号都各自对应上面的结构更改。
-
-# 训练过程可视化：
 
 # 主要参数配置
 使用的是transformers（ltl）模型，这里使用的参数配置如下：
