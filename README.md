@@ -1,9 +1,4 @@
-# TODO，按照优先级：
-1. + 1/c
-2. 可视化loss，包括valid集
-3. Singular Value Recognition
-
-4. 在纯的ELM上实验householder
+# 训练过程可视化：
 
 # repo结果汇报
 **目前已有的实验效果:** 
