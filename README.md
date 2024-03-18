@@ -26,6 +26,7 @@
 
 参数搭配；
 |             |model_dim=512<br>ffn_dim=1024<br>FFN_dropout=attention_dropout=0.1|
+| :----:      | :----: |
 | transformrs | 33.37  |
 | :----:      | :----: |
 |layer_2      |30.67   |
