@@ -25,11 +25,10 @@
 |33.37|29.25| 27.98 |29.51|8.18|30.67|30.82|29.04|
 
 参数搭配；
-|             |model_dim=512<br>ffn_dim=1024<br>FFN_dropout=attention_dropout=0.1|
-| :----:      | :----: |
-| transformrs | 33.37  |
-| :----:      | :----: |
-|layer_2      |30.67   |
+|             |model_dim=512<br>ffn_dim=1024<br>FFN_dropout=attention_dropout=0.1|model_dim=512<br>ffn_dim=2048<br>FFN_dropout=attention_dropout=0.1<br>(base)|model_dim=1024<br>ffn_dim=4096<br>FFN_dropout=attention_dropout=0.3<br>(big)|
+| :----:      | :----: |||
+| transformrs | 33.37  |||
+|layer_2      |30.67   |27.96||
 
 **在/Transformer/modules下面发布主要的结构修改内容:**
 
