@@ -1,0 +1,112 @@
+Transformer(
+  (embedding): Embedding(10148, 1024, padding_idx=0)
+  (dropout1): Dropout(p=0.3, inplace=False)
+  (dropout2): Dropout(p=0.3, inplace=False)
+  (encoder): TransformerEncoder(
+    (layers): ModuleList(
+      (0-5): 6 x TransformerEncoderLayer(
+        (drop_out): Dropout(p=0.3, inplace=False)
+        (sa_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (ffn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (self_attn): MultiHeadAttention(
+          (drop_out): Dropout(p=0.3, inplace=False)
+          (fc): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (fc2): Linear(in_features=1024, out_features=1024, bias=True)
+      )
+    )
+    (layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+  )
+  (decoder): TransformerDecoder(
+    (layers): ModuleList(
+      (0-5): 6 x TransformerDecoderLayer(
+        (drop_out1): Dropout(p=0.3, inplace=False)
+        (drop_out2): Dropout(p=0.3, inplace=False)
+        (drop_out3): Dropout(p=0.3, inplace=False)
+        (sa_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (en_de_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (ffn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (self_attn): MultiHeadAttention(
+          (drop_out): Dropout(p=0.3, inplace=False)
+          (fc): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (en_de_attn): MultiHeadAttention(
+          (drop_out): Dropout(p=0.3, inplace=False)
+          (fc): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (fc2): Linear(in_features=1024, out_features=1024, bias=True)
+      )
+    )
+    (layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+  )
+  (fc): Linear(in_features=1024, out_features=10148, bias=True)
+)
+Epoch: 0 | Time: 0m 43s | Training loss: 8.099145261417554 | nll loss: 7.949960400386586 | ppl: 247.27291287558327 | lr: 2.4828820691165793e-05
+Epoch: 0 | Time: 1m 29s | Training loss: 6.897430972121701 | nll loss: 6.461575216395773 | ppl: 88.13085011570215 | lr: 4.953411491123126e-05
+Epoch: 0 | Time: 2m 17s | Training loss: 6.681691669699897 | nll loss: 6.247099650539046 | ppl: 75.95640136661548 | lr: 7.423940913129672e-05
+Epoch: 0 | Time: 3m 6s | Training loss: 6.361335563971659 | nll loss: 5.88333704135521 | ppl: 59.02838810435803 | lr: 9.894470335136219e-05
+Epoch: 0 | Time: 3m 55s | Training loss: 5.986442983751832 | nll loss: 5.455838391813175 | ppl: 43.89054841669502 | lr: 0.00012364999757142765
+Epoch: 0 | Time: 4m 9s | Valid loss: 5.853577666804761 | nll loss: 5.266089388724371 | ppl: 38.48140018081963
+Epoch: 1 | Time: 0m 49s | Training loss: 5.731515491351082 | nll loss: 5.161647189377345 | ppl: 35.794032743179834 | lr: 0.0001524316653378039
+Epoch: 1 | Time: 1m 40s | Training loss: 5.587725567672396 | nll loss: 4.9952336322027975 | ppl: 31.8944530279473 | lr: 0.00017713695955786938
+Epoch: 1 | Time: 2m 32s | Training loss: 5.431067826939824 | nll loss: 4.815784659781622 | ppl: 28.164084279616894 | lr: 0.00020184225377793485
+Epoch: 1 | Time: 3m 24s | Training loss: 5.197061792340461 | nll loss: 4.546425440388157 | ppl: 23.36740203328088 | lr: 0.00022654754799800031
+Epoch: 1 | Time: 4m 16s | Training loss: 5.056348098959766 | nll loss: 4.381492863007072 | ppl: 20.84302634926497 | lr: 0.0002512528422180658
+Epoch: 1 | Time: 4m 30s | Valid loss: 4.947744398786264 | nll loss: 4.174106116578418 | ppl: 18.052241972427655
+Epoch: 2 | Time: 0m 52s | Training loss: 4.848258727623307 | nll loss: 4.139851225901865 | ppl: 17.62866385110417 | lr: 0.00028003450998444207
+Epoch: 2 | Time: 1m 45s | Training loss: 4.686971799205656 | nll loss: 3.9528544918259856 | ppl: 15.48559049685718 | lr: 0.0003047398042045075
+Epoch: 2 | Time: 2m 38s | Training loss: 4.640874583304307 | nll loss: 3.897104254045927 | ppl: 14.898593701390613 | lr: 0.00032944509842457295
+Epoch: 2 | Time: 3m 31s | Training loss: 4.545152578548591 | nll loss: 3.7841460715017825 | ppl: 13.776581808625574 | lr: 0.00035415039264463844
+Epoch: 2 | Time: 4m 24s | Training loss: 4.4524483727409905 | nll loss: 3.6750720735119558 | ppl: 12.773412294170857 | lr: 0.0003788556868647039
+Epoch: 2 | Time: 4m 38s | Valid loss: 4.411697957138538 | nll loss: 3.526573758342552 | ppl: 11.524032732926115
+Epoch: 3 | Time: 0m 53s | Training loss: 4.319894012359604 | nll loss: 3.519745438409365 | ppl: 11.469618006967957 | lr: 0.00040763735463108017
+Epoch: 3 | Time: 1m 47s | Training loss: 4.281930563640419 | nll loss: 3.4715700065765844 | ppl: 11.092941023318284 | lr: 0.0004323426488511456
+Epoch: 3 | Time: 2m 42s | Training loss: 4.216181337327706 | nll loss: 3.393955376021039 | ppl: 10.51192786788107 | lr: 0.0004570479430712111
+Epoch: 3 | Time: 3m 37s | Training loss: 4.228424888941467 | nll loss: 3.404504312631488 | ppl: 10.589072419015574 | lr: 0.00048175323729127655
+Epoch: 3 | Time: 4m 31s | Training loss: 4.202907724865311 | nll loss: 3.37454131318825 | ppl: 10.371418450413266 | lr: 0.00048804300590189395
+Epoch: 3 | Time: 4m 45s | Valid loss: 4.125698752113402 | nll loss: 3.198273112406007 | ppl: 9.178593602235944
+Epoch: 4 | Time: 0m 53s | Training loss: 4.063922248264544 | nll loss: 3.2129817586256775 | ppl: 9.272650371500182 | lr: 0.0004747398378961556
+Epoch: 4 | Time: 1m 47s | Training loss: 4.0812875780843845 | nll loss: 3.2312977523518853 | ppl: 9.391123424563398 | lr: 0.0004641487253753835
+Epoch: 4 | Time: 2m 42s | Training loss: 4.058079971157381 | nll loss: 3.2032571385633313 | ppl: 9.210357391188989 | lr: 0.0004542362286820427
+Epoch: 4 | Time: 3m 37s | Training loss: 4.042780025138443 | nll loss: 3.186495912668736 | ppl: 9.103970688336736 | lr: 0.000444932842277845
+Epoch: 4 | Time: 4m 31s | Training loss: 4.008280204604438 | nll loss: 3.1469858114427782 | ppl: 8.858029558864976 | lr: 0.0004361786354981972
+Epoch: 4 | Time: 4m 45s | Valid loss: 4.015977875065781 | nll loss: 3.0682683305992575 | ppl: 8.387659701688086
+Epoch: 5 | Time: 0m 54s | Training loss: 3.9260802594936037 | nll loss: 3.0525843766639555 | ppl: 8.296968889824681 | lr: 0.0004266037684451276
+Epoch: 5 | Time: 1m 49s | Training loss: 3.9012455169628564 | nll loss: 3.0218492285009195 | ppl: 8.122079949694836 | lr: 0.00041886919362186685
+Epoch: 5 | Time: 2m 44s | Training loss: 3.8588987131232453 | nll loss: 2.9726308923476656 | ppl: 7.849663949335816 | lr: 0.0004115406153869587
+Epoch: 5 | Time: 3m 38s | Training loss: 3.871305072765742 | nll loss: 2.988811644076827 | ppl: 7.938198531511079 | lr: 0.0004045837143255011
+Epoch: 5 | Time: 4m 33s | Training loss: 3.893205679661285 | nll loss: 3.0126579647953498 | ppl: 8.070499483957416 | lr: 0.0003979680998499955
+Epoch: 5 | Time: 4m 47s | Valid loss: 3.8474099634983374 | nll loss: 2.8678867075889642 | ppl: 7.299950633013839
+Epoch: 6 | Time: 0m 54s | Training loss: 3.7745047375258594 | nll loss: 2.876008149380355 | ppl: 7.3411605265342095 | lr: 0.00039065552115486943
+Epoch: 6 | Time: 1m 50s | Training loss: 3.801208779877326 | nll loss: 2.9069677015959967 | ppl: 7.5004008541955764 | lr: 0.0003846900536002858
+Epoch: 6 | Time: 2m 45s | Training loss: 3.7440306920431974 | nll loss: 2.840827464444377 | ppl: 7.164308511682699 | lr: 0.00037898978203960206
+Epoch: 6 | Time: 3m 40s | Training loss: 3.765058215996634 | nll loss: 2.865028025107046 | ppl: 7.28550019201959 | lr: 0.00037353562248585494
+Epoch: 6 | Time: 4m 34s | Training loss: 3.7304066799509275 | nll loss: 2.825819726018355 | ppl: 7.090167576372662 | lr: 0.00036831035986447313
+Epoch: 6 | Time: 4m 49s | Valid loss: 3.7621866987269206 | nll loss: 2.768311103172115 | ppl: 6.813098682148457
+Epoch: 7 | Time: 0m 53s | Training loss: 3.6915911361887934 | nll loss: 2.7814493471983597 | ppl: 6.875427152400642 | lr: 0.000362490952338743
+Epoch: 7 | Time: 1m 48s | Training loss: 3.666843540613736 | nll loss: 2.7522806165213374 | ppl: 6.7378140638654545 | lr: 0.000357709801949711
+Epoch: 7 | Time: 2m 42s | Training loss: 3.708633690118633 | nll loss: 2.799607938073639 | ppl: 6.962512140491078 | lr: 0.0003531129802387255
+Epoch: 7 | Time: 3m 37s | Training loss: 3.6056350379435624 | nll loss: 2.682365737215441 | ppl: 6.419076422834098 | lr: 0.0003486889395917592
+Epoch: 7 | Time: 4m 32s | Training loss: 3.710217346597973 | nll loss: 2.8028122845148715 | ppl: 6.977993649225166 | lr: 0.000344427120451098
+Epoch: 7 | Time: 4m 47s | Valid loss: 3.6694321668103593 | nll loss: 2.6615582536323505 | ppl: 6.327160766282233
+Epoch: 8 | Time: 0m 54s | Training loss: 3.5147717505342344 | nll loss: 2.578414769056626 | ppl: 5.972830451248902 | lr: 0.0003396538490183541
+Epoch: 8 | Time: 1m 48s | Training loss: 3.604324967594063 | nll loss: 2.6804681090744613 | ppl: 6.410638733536858 | lr: 0.00033571112867427115
+Epoch: 8 | Time: 2m 43s | Training loss: 3.5637024627098186 | nll loss: 2.6331936243918963 | ppl: 6.203978232071914 | lr: 0.0003319025978526907
+Epoch: 8 | Time: 3m 38s | Training loss: 3.578082683336965 | nll loss: 2.651395616868048 | ppl: 6.2827475727303295 | lr: 0.0003282208134347356
+Epoch: 8 | Time: 4m 33s | Training loss: 3.64736301320149 | nll loss: 2.729960846539276 | ppl: 6.6343763129977225 | lr: 0.00032465889775588615
+Epoch: 8 | Time: 4m 47s | Valid loss: 3.617797989609343 | nll loss: 2.6026345877703942 | ppl: 6.0739481277591
+Epoch: 9 | Time: 0m 54s | Training loss: 3.5255518311866636 | nll loss: 2.59066033390969 | ppl: 6.023743477882084 | lr: 0.0003206519896442782
+Epoch: 9 | Time: 1m 49s | Training loss: 3.498874505179408 | nll loss: 2.559501678339118 | ppl: 5.895040310088123 | lr: 0.00031732839255800625
+Epoch: 9 | Time: 2m 44s | Training loss: 3.5359074135357362 | nll loss: 2.601467003647839 | ppl: 6.06903442373576 | lr: 0.0003141060467545946
+Epoch: 9 | Time: 3m 40s | Training loss: 3.476839511580346 | nll loss: 2.5346097739164803 | ppl: 5.794201166900422 | lr: 0.00031097991355548546
+Epoch: 9 | Time: 4m 35s | Training loss: 3.4770276047404574 | nll loss: 2.5357631059737704 | ppl: 5.798835070547048 | lr: 0.00030794529847961657
+Epoch: 9 | Time: 4m 49s | Valid loss: 3.5309011487946615 | nll loss: 2.4823675050026286 | ppl: 5.58813744308482
