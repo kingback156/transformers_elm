@@ -28,7 +28,7 @@
 |             |model_dim=512<br>ffn_dim=1024<br>FFN_dropout=attention_dropout=0.1|model_dim=512<br>ffn_dim=2048<br>FFN_dropout=attention_dropout=0.1<br>(base)|model_dim=1024<br>ffn_dim=4096<br>FFN_dropout=attention_dropout=0.3<br>(big)|
 | :----:      | :----: |:----:|:----:|
 | transformrs | 33.37  |32.79||
-|layer_2      |30.67   |27.96||
+|layer_2      |30.67   |27.96|16.59|
 |layer_4      |29.04   |28.20|25.23|
 
 **在/Transformer/modules下面发布主要的结构修改内容:**
