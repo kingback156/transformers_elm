@@ -20,7 +20,7 @@
 
 (因为如果设置的全部和transformers的参数配置全部一样，那么将要非常长的时间，在原文中使用**base模型**单次训练就跑了**12小时**，使用**big模型**单次训练便**3.5天**，**复现的时间消耗太大**，因此为了尽快的看到所有的复现结果，我调整了参数设置，并且采用了Byte Pair Encoding分解结束，这样便可以尽快的看到不同的设置所导致的bleu结果趋势)
 
-| transformrs | transformrs<br>ELM(fixed) | transformrs+ELM<br>(fixed+node*1.2) |  transformrs+ELM<br>(fixed+node*1.5)|layer_1|layer_2|layer_3|layer_4|case5|
+| transformrs | transformrs<br>ELM(fixed) | transformrs+ELM<br>(fixed+node*1.2) |  transformrs+ELM<br>(fixed+node*1.5)|case_1|case_2|case_3|case_4|case_5|
 | :----: | :----: | :----: |:----: |:----:|:----:|:----:|:----:|:----:|
 |33.37|29.25| 27.98 |29.51|8.18|30.67|30.82|29.04|29.87|
 
@@ -33,13 +33,15 @@
 
 **在/Transformer/modules下面发布主要的结构修改内容:**
 
-transformer_layer_1.py(随机初始化-->SVD分解-->中间的进行BP更新，左右两边固定)
+case_1:casetransformer_layer_1.py(随机初始化-->SVD分解-->中间的进行BP更新，左右两边固定)
 
-transformer_layer_2.py(随机初始化-->SVD分解-->中间的赋值为1固定，左右两边固定-->三个都固定)
+case_2:transformer_layer_2.py(随机初始化-->SVD分解-->中间的赋值为1固定，左右两边固定-->三个都固定)
 
-transformer_layer_3.py(随机初始化-->SVD分解-->中间的赋值为1，左右两边固定-->中间的从1进行BP更新)
+case_3:transformer_layer_3.py(随机初始化-->SVD分解-->中间的赋值为1，左右两边固定-->中间的从1进行BP更新)
 
-transformer_layer_4.py(直接去掉一层)
+case_4:transformer_layer_4.py(直接去掉一层)
+
+case_5:transformer_case5.py(使用QR分解，Q作为权重在后面不进行更新)
 
 **在/translation下面发布不同的结构对应的翻译:**
 
