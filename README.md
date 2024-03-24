@@ -20,9 +20,9 @@
 
 (因为如果设置的全部和transformers的参数配置全部一样，那么将要非常长的时间，在原文中使用**base模型**单次训练就跑了**12小时**，使用**big模型**单次训练便**3.5天**，**复现的时间消耗太大**，因此为了尽快的看到所有的复现结果，我调整了参数设置，并且采用了Byte Pair Encoding分解结束，这样便可以尽快的看到不同的设置所导致的bleu结果趋势)
 
-| transformrs | transformrs<br>ELM(fixed) | transformrs+ELM<br>(fixed+node*1.2) |  transformrs+ELM<br>(fixed+node*1.5)|layer_1|layer_2|layer_3|layer_4|
-| :----: | :----: | :----: |:----: |:----:|:----:|:----:|:----:|
-|33.37|29.25| 27.98 |29.51|8.18|30.67|30.82|29.04|
+| transformrs | transformrs<br>ELM(fixed) | transformrs+ELM<br>(fixed+node*1.2) |  transformrs+ELM<br>(fixed+node*1.5)|layer_1|layer_2|layer_3|layer_4|case5|
+| :----: | :----: | :----: |:----: |:----:|:----:|:----:|:----:|:----:|
+|33.37|29.25| 27.98 |29.51|8.18|30.67|30.82|29.04|29.87|
 
 参数搭配:
 |             |model_dim=512<br>ffn_dim=1024<br>FFN_dropout=attention_dropout=0.1|model_dim=512<br>ffn_dim=2048<br>FFN_dropout=attention_dropout=0.1<br>(base)|model_dim=1024<br>ffn_dim=4096<br>FFN_dropout=attention_dropout=0.3<br>(big)|
