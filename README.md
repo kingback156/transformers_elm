@@ -11,9 +11,9 @@ case_3:transformer_layer_3.py(随机初始化-->SVD分解-->中间的赋值为1�
 
 case_4:transformer_layer_4.py(直接去掉一层)
 
-| transformrs | transformrs<br>ELM(fixed) | transformrs+ELM<br>(fixed+node*1.2) |  transformrs+ELM<br>(fixed+node*1.5)|case_1|case_2|case_3|case_4|case_5|case_6|
-| :----: | :----: | :----: |:----: |:----:|:----:|:----:|:----:|:----:|:----:|
-|33.37|29.25| 27.98 |29.51|8.18|30.67|30.82|29.04|29.87|29.21
+| transformrs | transformrs<br>ELM(fixed) | transformrs+ELM<br>(fixed+node*1.2) |  transformrs+ELM<br>(fixed+node*1.5)|case_1|case_2|case_3|case_4|
+| :----: | :----: | :----: |:----: |:----:|:----:|:----:|:----:|
+|33.37|29.25| 27.98 |29.51|8.18|30.67|30.82|29.04|
 
 **bias结果挑选:** 
 
