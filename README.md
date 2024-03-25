@@ -36,7 +36,7 @@ case_8:transformer_case5.py(使用QR分解，Q作为权重在后面不进行更�
 |case_2      |30.67   |27.96|16.59|
 |case_4      |29.04   |28.20|25.23|
 
-# 训练过程可视化：
+# [表1]训练过程可视化：
 <table>
   <tr>
     <td><img width="1044" alt="Snipaste_2024-03-17_15-46-47" src="https://github.com/kingback156/transformers_elm/assets/146167978/9f80aa5a-6250-4898-8b95-b7f25fc1987a" scale=0.5></td>
