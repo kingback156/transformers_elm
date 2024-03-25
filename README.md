@@ -33,8 +33,8 @@ case_8:transformer_case5.py(使用QR分解，Q作为权重在后面不进行更�
 |             |model_dim=512<br>ffn_dim=1024<br>FFN_dropout=attention_dropout=0.1|model_dim=512<br>ffn_dim=2048<br>FFN_dropout=attention_dropout=0.1<br>(base)|model_dim=1024<br>ffn_dim=4096<br>FFN_dropout=attention_dropout=0.3<br>(big)|
 | :----:      | :----: |:----:|:----:|
 | transformrs | 33.37  |32.79|29.74|
-|layer_2      |30.67   |27.96|16.59|
-|layer_4      |29.04   |28.20|25.23|
+|case_2      |30.67   |27.96|16.59|
+|case_4      |29.04   |28.20|25.23|
 
 # 训练过程可视化：
 <table>
@@ -55,15 +55,3 @@ decoder_layers: 6
 droprate=0.1
 epoch=10
 ```
-# 主要修改部分
-1.在encoder和decoder中都加了一个svdchange函数，专门做svd分解。
-
-2.在这个里面的其他部分都是常规操作，主要是做的self.diag_param = nn.Parameter(torch.diag(S))，分解出来的对角矩阵提取他的对角，这样确保不是更改整个矩阵，而是更改这个向量
-
-3.在这个forward部分，把E通过对角的引入重建出来
-```
-E = torch.zeros(self.U.size(0), self.V.size(1), device=net_input.device)
-min_dim = min(E.size(0), E.size(1))
-E[torch.arange(min_dim), torch.arange(min_dim)] = self.diag_param
-```
-4.其他的都没有太大的变化
