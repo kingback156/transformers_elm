@@ -18,21 +18,6 @@
 
 (使用本代码跑出来的transformers的复现内容,BLEU指标数）
 
-(因为如果设置的全部和transformers的参数配置全部一样，那么将要非常长的时间，在原文中使用**base模型**单次训练就跑了**12小时**，使用**big模型**单次训练便**3.5天**，**复现的时间消耗太大**，因此为了尽快的看到所有的复现结果，我调整了参数设置，并且采用了Byte Pair Encoding分解结束，这样便可以尽快的看到不同的设置所导致的bleu结果趋势)
-
-| transformrs | transformrs<br>ELM(fixed) | transformrs+ELM<br>(fixed+node*1.2) |  transformrs+ELM<br>(fixed+node*1.5)|case_1|case_2|case_3|case_4|case_5|
-| :----: | :----: | :----: |:----: |:----:|:----:|:----:|:----:|:----:|
-|33.37|29.25| 27.98 |29.51|8.18|30.67|30.82|29.04|29.87|
-
-参数搭配:
-|             |model_dim=512<br>ffn_dim=1024<br>FFN_dropout=attention_dropout=0.1|model_dim=512<br>ffn_dim=2048<br>FFN_dropout=attention_dropout=0.1<br>(base)|model_dim=1024<br>ffn_dim=4096<br>FFN_dropout=attention_dropout=0.3<br>(big)|
-| :----:      | :----: |:----:|:----:|
-| transformrs | 33.37  |32.79|29.74|
-|layer_2      |30.67   |27.96|16.59|
-|layer_4      |29.04   |28.20|25.23|
-
-**在/Transformer/modules下面发布主要的结构修改内容:**
-
 case_1:casetransformer_layer_1.py(随机初始化-->SVD分解-->中间的进行BP更新，左右两边固定)
 
 case_2:transformer_layer_2.py(随机初始化-->SVD分解-->中间的赋值为1固定，左右两边固定-->三个都固定)
@@ -41,15 +26,30 @@ case_3:transformer_layer_3.py(随机初始化-->SVD分解-->中间的赋值为1�
 
 case_4:transformer_layer_4.py(直接去掉一层)
 
+| transformrs | transformrs<br>ELM(fixed) | transformrs+ELM<br>(fixed+node*1.2) |  transformrs+ELM<br>(fixed+node*1.5)|case_1|case_2|case_3|case_4|case_5|case_6|
+| :----: | :----: | :----: |:----: |:----:|:----:|:----:|:----:|:----:|:----:|
+|33.37|29.25| 27.98 |29.51|8.18|30.67|30.82|29.04|29.87|29.21
+
+**bias结果挑选:** 
+
 case_5:transformer_case5.py(使用QR分解，Q作为权重在后面不进行更新，bias从0开始更新)
 
 case_6:transformer_case5.py(使用QR分解，Q作为权重在后面不进行更新，bias从randn开始更新)
 
-**在/translation下面发布不同的结构对应的翻译:**
+case_7:transformer_case5.py(使用QR分解，Q作为权重在后面不进行更新，bias从0.1*randn开始更新)
 
-translation(0-4)
+case_8:transformer_case5.py(使用QR分解，Q作为权重在后面不进行更新，bias为0，且不更新)
 
-其中translation_0对应的最原始的transformers,其余的标号都各自对应上面的结构更改。
+|case_5|case_6|case_7|case_8|
+|:----:|:----:|:----:|:----:|
+|29.87 |29.21 |29.93 ||
+
+参数搭配:
+|             |model_dim=512<br>ffn_dim=1024<br>FFN_dropout=attention_dropout=0.1|model_dim=512<br>ffn_dim=2048<br>FFN_dropout=attention_dropout=0.1<br>(base)|model_dim=1024<br>ffn_dim=4096<br>FFN_dropout=attention_dropout=0.3<br>(big)|
+| :----:      | :----: |:----:|:----:|
+| transformrs | 33.37  |32.79|29.74|
+|layer_2      |30.67   |27.96|16.59|
+|layer_4      |29.04   |28.20|25.23|
 
 # 主要参数配置
 使用的是transformers（ltl）模型，这里使用的参数配置如下：
