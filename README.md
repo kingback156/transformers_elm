@@ -33,6 +33,14 @@ case_8:transformer_case5.py(使用QR分解，Q作为权重在后面不进行更�
 
 case_9:transformer_case9.py(高斯初始化+FC2的weight_decay调整)
 
+因为修改较多，提交了
+
+(1)"transformer_case9.py"; [Transformer/modules/transformer_case9.py]
+
+(2)"train2.py"; [main folder/train2.py]
+
+(3)"transformer2.py" [Transformer/models/transformer2.py]
+
 |只有高斯初始化|高斯+weight_decay<br>=0.0001|高斯+weight_decay<br>=0.00005|高斯+weight_decay<br>=0.001|
 |:----:|:----:|:----:|:----:|
 | | | | |
