@@ -27,7 +27,7 @@ case_8:transformer_case5.py(使用QR分解，Q作为权重在后面不进行更�
 
 |case_5|case_6|case_7|case_8|
 |:----:|:----:|:----:|:----:|
-|29.87 |29.21 |29.93 ||
+|29.87 |29.21 |29.93 |27.97 |
 
 **参数搭配[表3]:**
 |             |model_dim=512<br>ffn_dim=1024<br>FFN_dropout=attention_dropout=0.1|model_dim=512<br>ffn_dim=2048<br>FFN_dropout=attention_dropout=0.1<br>(base)|model_dim=1024<br>ffn_dim=4096<br>FFN_dropout=attention_dropout=0.3<br>(big)|
