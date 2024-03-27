@@ -3,7 +3,7 @@ import torch.nn.functional as F
 import torch.nn as nn
 from typing import Optional
 from Transformer.modules import MultiHeadAttention
-
+# orthogonal initialization weight,weight fixed, gaussian initialization of bias, bias fixed,
 def orth (m,n): 
     assert m>=n, "orthogonal matrix should be full rank"
     torch.manual_seed(1)
@@ -33,9 +33,9 @@ class TransformerDecoderLayer(nn.Module):
         self.self_attn = MultiHeadAttention(head_num, model_dim)
         self.en_de_attn = MultiHeadAttention(head_num, model_dim)
 
-        orth_weight = orth(ffn_dim,model_dim) # Ê¹ÓÃorth²úÉúÕı½»¾ØÕó 
-        self.fc1_weight = nn.Parameter(orth_weight, requires_grad=False)  # ĞÂÈ¨ÖØ²»¸üĞÂ 
-        self.fc1_bias = nn.Parameter(biasinitialization(ffn_dim), requires_grad=False) # ¸ßË¹³õÊ¼»¯
+        orth_weight = orth(ffn_dim,model_dim) # ä½¿ç”¨orthäº§ç”Ÿæ­£äº¤çŸ©é˜µ 
+        self.fc1_weight = nn.Parameter(orth_weight, requires_grad=False)  # æ–°æƒé‡ä¸æ›´æ–° 
+        self.fc1_bias = nn.Parameter(biasinitialization(ffn_dim), requires_grad=False) # é«˜æ–¯åˆå§‹åŒ–
 
         self.fc2 = nn.Linear(ffn_dim, model_dim)
         nn.init.xavier_uniform_(self.fc2.weight)
@@ -71,7 +71,7 @@ class TransformerDecoderLayer(nn.Module):
         else:
             res, x = x, self.ffn_layer_norm(x)
 
-        x = F.relu(F.linear(x, self.fc1_weight, self.fc1_bias))# ´«¹ıÀ´ĞÂ¾ØÕóºÍÈ¨ÖØ²¢Í¨¹ırelu
+        x = F.relu(F.linear(x, self.fc1_weight, self.fc1_bias))# ä¼ è¿‡æ¥æ–°çŸ©é˜µå’Œæƒé‡å¹¶é€šè¿‡relu
 
         x = self.fc2(x)
         x = self.drop_out3(x)
@@ -94,9 +94,9 @@ class TransformerEncoderLayer(nn.Module):
 
         self.self_attn = MultiHeadAttention(head_num, model_dim)
 
-        orth_weight = orth(ffn_dim,model_dim) # Ê¹ÓÃorth²úÉúÕı½»¾ØÕó
-        self.fc1_weight = nn.Parameter(orth_weight, requires_grad=False)  # ĞÂÈ¨ÖØ²»¸üĞÂ
-        self.fc1_bias = nn.Parameter(biasinitialization(ffn_dim), requires_grad=False) # ¸ßË¹³õÊ¼»¯
+        orth_weight = orth(ffn_dim,model_dim) # ä½¿ç”¨orthäº§ç”Ÿæ­£äº¤çŸ©é˜µ
+        self.fc1_weight = nn.Parameter(orth_weight, requires_grad=False)  # æ–°æƒé‡ä¸æ›´æ–°
+        self.fc1_bias = nn.Parameter(biasinitialization(ffn_dim), requires_grad=False) # é«˜æ–¯åˆå§‹åŒ–
 
         self.fc2 = nn.Linear(ffn_dim, model_dim)
 
@@ -118,7 +118,7 @@ class TransformerEncoderLayer(nn.Module):
         else:
             res, x = x, self.ffn_layer_norm(x)
         
-        x = F.relu(F.linear(x, self.fc1_weight, self.fc1_bias))# ´«¹ıÀ´ĞÂ¾ØÕóºÍÈ¨ÖØ²¢Í¨¹ırelu
+        x = F.relu(F.linear(x, self.fc1_weight, self.fc1_bias))# ä¼ è¿‡æ¥æ–°çŸ©é˜µå’Œæƒé‡å¹¶é€šè¿‡relu
 
         x = self.fc2(x)
         x = self.drop_out(x)
