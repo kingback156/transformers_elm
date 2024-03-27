@@ -29,6 +29,14 @@ case_8:transformer_case5.py(使用QR分解，Q作为权重在后面不进行更�
 |:----:|:----:|:----:|:----:|
 |29.87 |29.21 |29.93 |27.97 |
 
+**FC1的Bias在高斯初始化的情况下调整FC2的weight_decay:[表2.5]** 
+
+case_9:transformer_case9.py(高斯初始化+FC2的weight_decay调整)
+
+|只有高斯初始化|高斯+weight_decay<br>=0.0001|高斯+weight_decay<br>=0.00005|高斯+weight_decay<br>=0.001|
+|:----:|:----:|:----:|:----:|
+| | | | |
+
 **参数搭配[表3]:**
 |             |model_dim=512<br>ffn_dim=1024<br>FFN_dropout=attention_dropout=0.1|model_dim=512<br>ffn_dim=2048<br>FFN_dropout=attention_dropout=0.1<br>(base)|model_dim=1024<br>ffn_dim=4096<br>FFN_dropout=attention_dropout=0.3<br>(big)|
 | :----:      | :----: |:----:|:----:|
