@@ -1,8 +1,15 @@
 # repo结果汇报
-## STAGE2:[表4]
-| transELM<br>other para=0<br>fc2=0.0001| transELM<br>all=0 | transELM<br>all=0.0001 |transELM（大参数）<br>other para=0<br>fc2=0.0001|
-| :----: | :----: | :----: |:----: |
-|30.80|30.70| 28.84 |23.82|
+## STAGE2:全部在做transELM[表4]
+
+{case1-3:model_dim=512 ; ffn_dim=1024;
+case4-5:model_dim=1024;ffn_dim=4096;}
+
+{case1-4:drop_out=0.1;
+case5:drop_out=0.3}
+
+|other_weightdecay=0<br>fc2_weightdecay=0.0001|all_weightdecay=0 |all_weightdecay=0.0001 |other_weightdecay=0<br>fc2_weightdecay=0.0001<BIG model>|other_weightdecay=0<br>fc2_weightdecay=0.0001<br>drop_out=0.3|
+| :----: | :----: | :----: |:----: |:----: |
+|30.80|30.70| 28.84 |23.82| |
 
 ## 目前已有的实验效果:[表1]
 
