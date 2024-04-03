@@ -7,7 +7,7 @@
 
 |case1<br>other_weightdecay=0<br>fc2_weightdecay=0.0001|case2<br>all_weightdecay=0 |case3<br>all_weightdecay=0.0001 |case4<br>other_weightdecay=0<br>fc2_weightdecay=0.0001<BIG model>|case5<br>other_weightdecay=0<br>fc2_weightdecay=0.0001<br>drop_out=0.3|
 | :----: | :----: | :----: |:----: |:----: |
-|30.80|30.70| 28.84 |23.82| |
+|30.80|30.70| 28.84 |23.82|27.55|
 
 ## 目前已有的实验效果:[表1]
 
