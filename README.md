@@ -1,4 +1,9 @@
 # repo结果汇报
+## STAGE2:[表4]
+| transELM<br>other para=0<br>fc2=0.0001| transELM<br>all=0 | transELM<br>all=0.0001 |transELM（大参数）<br>other para=0<br>fc2=0.0001|
+| :----: | :----: | :----: |:----: |
+|30.80|30.70| 28.84 |23.82|
+
 ## 目前已有的实验效果:[表1]
 
 (使用本代码跑出来的transformers的复现内容,BLEU指标数）
