@@ -1,13 +1,9 @@
 # repo结果汇报
 ## STAGE2:全部在做transELM[表4]
 
-{**case1-3**:model_dim=512 ; ffn_dim=1024;
+{**case1-3**:model_dim=512 ; ffn_dim=1024;      **case4-5**:model_dim=1024;ffn_dim=4096;}
 
-**case4-5**:model_dim=1024;ffn_dim=4096;}
-
-{**case1-4**:drop_out=0.1;
-
-**case5**:drop_out=0.3}
+{**case1-4**:drop_out=0.1;       **case5**:drop_out=0.3}
 
 |other_weightdecay=0<br>fc2_weightdecay=0.0001|all_weightdecay=0 |all_weightdecay=0.0001 |other_weightdecay=0<br>fc2_weightdecay=0.0001<BIG model>|other_weightdecay=0<br>fc2_weightdecay=0.0001<br>drop_out=0.3|
 | :----: | :----: | :----: |:----: |:----: |
